@@ -13,7 +13,7 @@ class Model_backend_menu extends CI_Model {
     public function get_all_menu_data() {
         $this->db->select('*,users.name as entry_by');
         $this->db->from('menu');
-        $this->db->join('users', 'users.id = menu.entry_by');
+        $this->db->join('users', 'users.id = menu.entry_by','left');
         $this->db->order_by('menu_id DESC');
         $query = $this->db->get('');
         $result = $query->result();

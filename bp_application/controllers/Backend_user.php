@@ -80,7 +80,7 @@ class Backend_user extends CI_Controller {
 
         $data['name'] = $this->input->post('name', TRUE);
         $data['email_id'] = $this->input->post('email_id', TRUE);
-        $password = md5($this->input->post('password', TRUE));
+        $data['password'] = md5($this->input->post('password', TRUE));
         $data['user_group'] = $this->input->post('user_group', TRUE);
         //$data['college_code'] = $this->input->post('college_code', TRUE);
         $data['status'] = $this->input->post('status', TRUE);
