@@ -1,0 +1,1 @@
+ALTER TABLE `du_slider` ADD `short_description` TEXT NOT NULL AFTER `slider_caption`;
