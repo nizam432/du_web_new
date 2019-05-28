@@ -28,6 +28,7 @@ class Frontend extends CI_Controller {
         $param = array();
         $param['notice'] = $this->model_frontend->get_notice_list_data();
         $param['slider'] = $this->model_frontend->get_slider_data();
+        $param['news'] = $this->model_frontend->get_news_data();
         //$param['content'] = $this->load->view('pages/home.php', $param, TRUE);
         $this->load->view('index.php', $param);
     }

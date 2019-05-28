@@ -4,7 +4,7 @@ class Model_backend_news extends  CI_Model
 {
 	public function get_news_list_data()
 	{
-		$this->db->select('news.news_id,news.title,news.details,news.news_image,news.entry_date_time as entry_date_time,users.name as entry_by');
+		$this->db->select('news.news_id,news.status,news.title,news.details,news.news_image,news.entry_date_time as entry_date_time,users.name as entry_by');
 		$this->db->from('news');
 		$this->db->join('users', 'users.id = news.entry_by');
 		$this->db->order_by("news.news_id", "DESC");

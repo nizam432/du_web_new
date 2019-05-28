@@ -25,7 +25,6 @@
                         <th>Photo</th>
                         <th>Title</th>
                         <th>Isactive</th>
-                        <th>Attached File</th>
                         <th>Edit</th>
                     </tr>
                 </thead>
@@ -39,7 +38,7 @@
                             <td>'.$news_list_data->title. '</td>
                             <td>' . (($news_list_data->status == 1) ?
                                 '<span class="label label-success">Active</span>' : '<span class="label label-warning">Inactive</span>') . '</td>	
-                            <td><a target="_blanck" href="'.base_url().$news_list_data->attached_file.'" style="color:green"><span class="fa fa-download"></span> Download</a></td>
+                   
                             <td> <a href="' . base_url() . 'backend_news/edit/' . $news_list_data->news_id . '"><span class="fa fa-edit"></span> Edit</a></td>					
                         </tr>';
                     }

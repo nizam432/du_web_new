@@ -11,7 +11,7 @@ class Model_frontend extends CI_Model
     }
     
     
-    	public function get_notice_list_data()
+    public function get_notice_list_data()
 	{
 		$this->db->select('notice_id,notice,attached_file,entry_date_time');
 		$this->db->from('notice');
@@ -21,7 +21,19 @@ class Model_frontend extends CI_Model
 		$result=$query->result();
 		return $result;
 	}
-        
+    
+    
+	public function get_news_data()
+	{
+		$this->db->select('news_id,title,news_image,details,entry_date_time');
+		$this->db->from('news');
+        $this->db->where('status',1);
+		$this->db->order_by("news_id", "DESC");
+		$query=$this->db->get('');
+		$result=$query->result();
+		return $result;
+	}
+    
     
     /**
      * Get Home product data

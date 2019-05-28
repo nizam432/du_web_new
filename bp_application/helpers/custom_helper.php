@@ -10,6 +10,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 //-------------------------------------------------------------------------
 // ------------------------------------------------------------------------
+ 
+ 
+    function word_limit($text,$limit=70){
+        $explode = explode(' ',$text);
+        $string  = '';
+
+        $dots = '...';
+        if(count($explode) <= $limit){
+            $dots = '';
+        }
+        for($i=0;$i<$limit;$i++){
+            $string .= $explode[$i]." ";
+        }
+
+        return $string.$dots;
+    }
+	
 if (!function_exists('privilege_check')) {
     /**
      * Function: 
