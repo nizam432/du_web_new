@@ -35,7 +35,7 @@
                         </div>					
                         <label class="col-sm-2 control-label">Isactive</label>
                         <div class="col-sm-4">
-                            <select name="isactive" class="form-control">
+                            <select name="status" class="form-control">
                                 <option value="1">Active</option>
                                 <option value="0">Inactive</option>
                             </select>

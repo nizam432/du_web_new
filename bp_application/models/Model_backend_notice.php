@@ -4,7 +4,7 @@ class Model_backend_notice extends  CI_Model
 {
 	public function get_notice_list_data()
 	{
-		$this->db->select('notice.notice_id,notice.notice,notice.status,notice.entry_date_time as entry_date_time,users.name as entry_by');
+		$this->db->select('notice.notice_id,notice.notice,notice.attached_file,notice.status,notice.entry_date_time as entry_date_time,users.name as entry_by');
 		$this->db->from('notice');
 		$this->db->join('users', 'users.id = notice.entry_by');
 		$this->db->order_by("notice.notice_id", "DESC");

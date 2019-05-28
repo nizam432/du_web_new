@@ -86,7 +86,7 @@ class Backend_notice extends CI_Controller {
                 'notice' => $this->input->post('notice'),
                 'entry_by' => $this->user_id,
                 'entry_date_time' => $this->date_time,
-                'status' => $this->input->post('isactive')
+                'status' => $this->input->post('status')
             );
 
             $result = $this->do_upload('attached_file');
@@ -110,27 +110,37 @@ class Backend_notice extends CI_Controller {
      * @param int $id
      * @return void
      */
+    /** save slider
+     *
+     * return Response 
+     */
     public function update($id) {
-        $data = array();
-        $data['notice_title'] = $this->input->post('notice_title', TRUE);
-        $data['update_by'] = $this->session->userdata('admin_id');
-        $data['update_date_time'] = date('Y-m-d H:i:s');
-        $data['status'] = $this->input->post('status', TRUE);
-
-        //Form Validation
-        $this->form_validation->set_rules('notice_title', 'notice Title', 'required');
+        $this->form_validation->set_rules('notice', 'Notice', 'required', array('required' => "%s is required"));
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('notice_form_validation', validation_errors());
-            redirect("backend_notice/edit/$id");
+            redirect("backend_notice/edit/$slider_id");
         } else {
-            //update notice data
+            $data = array(
+                'notice' => $this->input->post('notice'),
+                'update_by' => $this->user_id,
+                'update_date_time' => $this->date_time,
+                'status' => $this->input->post('status')
+            );
+
+            $result = $this->do_upload('attached_file');
+            if (!empty($result[0])) {
+                $data['attached_file'] = 'uploads/attached_file/' . $result[0];
+            }
+
+
+            //save slider
             $this->model_backend_notice->update_notice_data($data, $id);
 
             // Redirect with flash message
-            $sdata = array();
-            $sdata['message'] = "update insert successfully";
-            $this->session->set_userdata($sdata);
+            $result = array();
+            $result['message'] = "Data insert successfully";
+            $this->session->set_userdata($result);
             redirect('backend_notice');
         }
     }
@@ -187,7 +197,7 @@ class Backend_notice extends CI_Controller {
             return $file_name;
         } else {
             echo 'Cover upload Error : ' . $this->attached_file->display_errors() . '<br/>';
-            exit;
+//            exit;
         }
     }
 
