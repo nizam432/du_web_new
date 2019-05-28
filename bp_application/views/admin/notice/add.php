@@ -31,7 +31,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Attached File<span class="req"/></span></label>
                         <div class="col-sm-4">
-                            <input type="file" name="attached_fil" class="form-control">
+                            <input type="file" name="attached_file" class="form-control">
                         </div>					
                         <label class="col-sm-2 control-label">Isactive</label>
                         <div class="col-sm-4">

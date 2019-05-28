@@ -169,9 +169,8 @@ class Backend_notice extends CI_Controller {
     public function do_upload($attached_file) {
         $config = array();
         $config['upload_path'] = './uploads/attached_file/';
-        $config['allowed_types'] = 'gif|jpg|png|pdf|docx|';
-        $config['max_size'] = '5000';
-
+        $config['allowed_types'] = 'gif|jpg|png|pdf|';
+        $config['max_size'] = '50000000';
         $this->load->library('upload', $config, 'attached_file');
         $this->attached_file->initialize($config);
         $attached_file = $this->attached_file->do_upload('attached_file');
