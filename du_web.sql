@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2019 at 02:58 AM
+-- Generation Time: May 28, 2019 at 09:06 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -162,7 +162,66 @@ INSERT INTO `du_menu` (`menu_id`, `menu_name`, `menu_link`, `root_menu`, `sub_ro
 (26, 'Stock', 'backend_stock', 0, 0, 6, 'fa fa-link', 2, '2018-01-14 00:06:53', 0, '0000-00-00 00:00:00', 1),
 (27, 'Database', 'backend_database', 0, 0, 7, 'fa fa-link', 2, '2018-01-14 00:07:46', 0, '0000-00-00 00:00:00', 1),
 (28, 'Price', 'backend_price', 0, 0, 6, 'fa fa-money', 2, '2018-02-09 17:45:09', 0, '0000-00-00 00:00:00', 1),
-(29, 'Slider Image', 'backend_slider', 0, 0, 8, 'fa fa-image', 2, '2018-02-09 17:26:47', 0, '0000-00-00 00:00:00', 1);
+(29, 'Slider Image', 'backend_slider', 0, 0, 8, 'fa fa-image', 2, '2018-02-09 17:26:47', 0, '0000-00-00 00:00:00', 1),
+(30, 'News', 'backend_news', 0, 0, 9, 'fa  fa-link', 1, '2019-05-28 21:18:06', 0, '0000-00-00 00:00:00', 1),
+(31, 'Notice', 'backend_notice', 0, 0, 10, 'fa  fa-link', 2, '2019-05-29 00:20:18', 0, '0000-00-00 00:00:00', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `du_news`
+--
+
+CREATE TABLE `du_news` (
+  `news_id` int(11) NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `details` text COLLATE utf8_unicode_ci NOT NULL,
+  `news_image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `entry_by` int(11) NOT NULL,
+  `entry_date_time` datetime NOT NULL,
+  `update_by` int(11) NOT NULL,
+  `update_date_time` datetime NOT NULL,
+  `status` tinyint(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `du_news`
+--
+
+INSERT INTO `du_news` (`news_id`, `title`, `details`, `news_image`, `entry_by`, `entry_date_time`, `update_by`, `update_date_time`, `status`) VALUES
+(1, 'ঢাকা বিশ্ববিদ্যালয় বৃহত্তর ফরিদপুর জেলা সমিতির আয়োজনে এক ইফতার ও দোয়া মাহ্ফিল অনুষ্ঠিত', '<p>ঢাকা বিশ্ববিদ্যালয় বিজনেস স্টাডিজ অনুষদের অধ্যাপক ড. হাবিবুল্লাহ সম্মেলন কক্ষে গতকাল ২৭ মে ২০১৯ সোমবার ঢাকা বিশ্ববিদ্যালয় বৃহত্তর ফরিদপুর জেলা সমিতির আয়োজনে এক ইফতার ও দোয়া মাহ্ফিল অনুষ্ঠিত হয়েছে। এতে বিশ্ববিদ্যালয়ের উপাচার্য অধ্যাপক ড. মো. আখতারুজ্জামান প্রধান অতিথি হিসেবে উপস্থিত ছিলেন। ঢাবি বৃহত্তর ফরিদপুর জেলা সমিতির সভাপতি মো. আমিরুল ইসলামের সভাপতিত্বে অনুষ্ঠানে অন্যান্যের মধ্যে উপস্থিত ছিলেন মুক্তিযোদ্ধা জিয়াউর রহমান হলের প্রাধ্যক্ষ অধ্যাপক ড. মো. জিয়া রহমান, বাংলাদেশ কুয়েত মৈত্রী হলের প্রাধ্যক্ষা অধ্যাপক ড. মাহবুবা নাসরীন, ঢাবি সিনেট ও সিন্ডিকেট সদস্য এস এম বাহালুল মজনুন চুন্নু এবং বাংলাদেশ আওয়ামী স্বেচ্ছাসেবক লীগের সভাপতি এ্যাড. মোল্লা মো. আবু কাওছার। অনুষ্ঠান সঞ্চালনা করেন সমিতির সাধারণ সম্পাদক মঞ্জুর হোসেন। (ছবি: ঢাবি জনসংযোগ)</p>\r\n', 'uploads/news_image/news_1.jpg', 2, '0000-00-00 00:00:00', 0, '2019-05-28 22:50:09', 1),
+(2, 'কলা অনুষদ আয়োজিত ইফতার মাহফিল ২০১৯ কলাভবনের শিক্ষক লাউঞ্জে অনুষ্ঠিত', '<p>ঢাকা বিশ্ববিদ্যালয় কলা অনুষদ আয়োজিত ইফতার মাহফিল ২০১৯ গতকাল ১৫ মে ২০১৯ বুধবার কলাভবনের শিক্ষক লাউঞ্জে অনুষ্ঠিত হয়েছে। এতে ঢাকা বিশ্ববিদ্যালয়ের উপাচার্য অধ্যাপক ড. মো. আখতারুজ্জামান প্রধান অতিথি হিসেবে উপস্থিত ছিলেন। কলা অনুষদের ডিন অধ্যাপক ড. আবু মো. দেলোয়ার হোসেনের সভাপতিত্বে অনুষ্ঠানে অন্যান্যের মধ্যে উপস্থিত ছিলেন বিশ্ববিদ্যালয়ের প্রো-ভাইস চ্যান্সেলর (প্রশাসন) অধ্যাপক ড. মুহাম্মদ সামাদ, ইফতার আয়োজন কমিটির আহ্বায়ক অধ্যাপক ড. মুহাম্মদ আব্দুর রশীদ, বিভিন্ন অনুষদের ডিন, বিভিন্ন বিভাগের চেয়ারম্যান, শিক্ষকবৃন্দ এবং কর্মকর্তা ও কর্মচারীবৃন্দ। (ছবি: ঢাবি জনসংযোগ) (মাহমুদ আলম) পরিচালক (ভারপ্রাপ্ত) জনসংযোগ দফতর ঢাকা বিশ্ববিদ্যালয়</p>\r\n', 'uploads/news_image/news_2.jpg', 2, '2019-05-28 23:14:29', 0, '0000-00-00 00:00:00', 1),
+(3, 'বিশ্ববিদ্যালয়ের ৩য় শ্রেণী কর্মচারীদের আবাসনের জন্য ২০-তলা বিশিষ্ট “শেখ কামাল টাওয়ার”-এর ভিত্তিপ্রস্তর স্থাপন', '<p>ঢাকা বিশ্ববিদ্যালয়ের উপাচার্য অধ্যাপক ড. মো. আখতারুজ্জামান প্রধান অতিথি হিসেবে উপস্থিত থেকে গতকাল ১৪ মে ২০১৯ পলাশী এলাকায় বিশ্ববিদ্যালয়ের ৩য় শ্রেণী কর্মচারীদের আবাসনের জন্য ২০-তলা বিশিষ্ট &ldquo;শেখ কামাল টাওয়ার&rdquo;-এর ভিত্তিপ্রস্তর স্থাপন করেন। (ছবি : ঢাবি জনসংযোগ) (মাহমুদ আলম) পরিচালক (ভারপ্রাপ্ত) জনসংযোগ দফতর ঢাকা বিশ্ববিদ্যালয়</p>\r\n', 'uploads/news_image/news_3.jpg', 2, '2019-05-28 23:58:11', 0, '0000-00-00 00:00:00', 1),
+(4, 'শিক্ষা ও গবেষণা ইনস্টিটিউটের ‘ডিজাবিলিটি, অটিজম এন্ড ইনক্লুসিভ এডুকেশন’ শীর্ষক অ্যাডভান্সড কোর্সের তৃতীয় ব্যাচের উদ্বোধন এবং ২য় ব্যাচের সমাপনী অনুষ্ঠান অনুষ্ঠিত', '<p>ঢাকা বিশ্ববিদ্যালয় শিক্ষা ও গবেষণা ইনস্টিটিউটের &lsquo;ডিজাবিলিটি, অটিজম এন্ড ইনক্লুসিভ এডুকেশন&rsquo; শীর্ষক অ্যাডভান্সড কোর্সের তৃতীয় ব্যাচের উদ্বোধন এবং ২য় ব্যাচের সমাপনী অনুষ্ঠান গতকাল ১০ মে ২০১৯ ইনস্টিটিউটের মিলনায়তনে অনুষ্ঠিত হয়। এতে প্রধান অতিথি হিসেবে উপস্থিত ছিলেন বিশ্ববিদ্যালয়ের উপাচার্য অধ্যাপক ড. মো. আখতারুজ্জামান। অনুষ্ঠানে সভাপতিত্ব করেন ইনস্টিটিউটের পরিচালক অধ্যাপক সৈয়দা তাহমিনা আখতার। (ছবি: ঢাবি জনসংযোগ)</p>\r\n', 'uploads/news_image/news_4.jpg', 2, '2019-05-28 23:59:41', 0, '0000-00-00 00:00:00', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `du_notice`
+--
+
+CREATE TABLE `du_notice` (
+  `notice_id` int(11) NOT NULL,
+  `notice` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `attached_file` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `entry_by` int(11) NOT NULL,
+  `entry_date_time` datetime NOT NULL,
+  `update_by` int(11) NOT NULL,
+  `update_date_time` datetime NOT NULL,
+  `status` tinyint(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `du_notice`
+--
+
+INSERT INTO `du_notice` (`notice_id`, `notice`, `attached_file`, `entry_by`, `entry_date_time`, `update_by`, `update_date_time`, `status`) VALUES
+(1, 'ইনস্টিটিউট অব ডিজাস্টার ম্যানেজমেন্ট অ্যান্ড ভালনারেবিলিটি স্টাডিজের ডিপ্লোমা ও সার্টিফিকেট ইন ডিজাস্টার ম্যানেজমেন্ট-২০১৯ প্রোগ্রামের ভর্তি বিজ্ঞপ্তি', 'uploads/attached_file/Int-DisMang.pdf', 2, '2019-05-29 00:21:50', 0, '0000-00-00 00:00:00', 1),
+(2, 'শিক্ষা ও গবেষণা ইনস্টিটিউটের এমএড (সান্ধ্য) কার্যক্রমের ভর্তি বিজ্ঞপ্তি', 'uploads/attached_file/IER-Notice.pdf', 2, '2019-05-29 00:23:27', 0, '0000-00-00 00:00:00', 1),
+(3, 'Admission Announcement for 6th Batch, 2019 Evening Master of Public Administration (EMPA)', 'uploads/attached_file/Dept_-Public-Relation.pdf', 2, '2019-05-29 00:24:44', 0, '0000-00-00 00:00:00', 1),
+(4, 'বাজেট কার্যক্রমে সংযোজনের জন্য তথ্য প্রেরণ প্রসঙ্গে', 'uploads/attached_file/DA-notice.pdf', 2, '2019-05-29 00:26:43', 0, '0000-00-00 00:00:00', 1),
+(5, 'রেজিস্ট্রারের অফিস এর টেন্ডার নোটিশ (উন্মুক্ত দরপত্র পদ্ধতিতে)', 'uploads/attached_file/Registrar-Tender-Noitce.pdf', 2, '2019-05-29 00:27:29', 0, '0000-00-00 00:00:00', 1),
+(6, 'রাষ্ট্রবিজ্ঞান বিভাগের অধীনে ২০১৭-২০১৮ শিক্ষাবর্ষের মাস্টার ইন গভার্নেন্স স্টাডিজ (এমজিএস) ১১তম ব্যাচ ১ম সেমিস্টারে ভর্তি পরীক্ষার লিখিত অংশের ফলাফল', 'uploads/attached_file/MGS-notice.pdf', 2, '2019-05-29 00:28:59', 0, '0000-00-00 00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -183,17 +242,15 @@ CREATE TABLE `du_role_privilege` (
 INSERT INTO `du_role_privilege` (`privilege_id`, `user_group`, `menu`) VALUES
 (242, 8, 11),
 (243, 8, 18),
-(332, 1, 11),
-(333, 1, 12),
-(334, 1, 13),
-(335, 1, 14),
-(336, 1, 15),
-(337, 1, 16),
-(338, 1, 23),
-(339, 1, 24),
-(340, 1, 25),
-(341, 1, 28),
-(342, 1, 29);
+(356, 1, 11),
+(357, 1, 12),
+(358, 1, 13),
+(359, 1, 14),
+(360, 1, 15),
+(361, 1, 16),
+(362, 1, 29),
+(363, 1, 30),
+(364, 1, 31);
 
 -- --------------------------------------------------------
 
@@ -219,9 +276,9 @@ CREATE TABLE `du_slider` (
 --
 
 INSERT INTO `du_slider` (`slider_id`, `slider_caption`, `short_description`, `link`, `slider_image`, `entry_by`, `entry_date_time`, `update_by`, `update_date_time`, `isactive`) VALUES
-(1, 'Slide1', '', '', 'uploads/slider_image/18167230_l21.jpg', 1, '2018-03-06 22:27:57', 1, '2018-03-21 00:36:44', 1),
-(2, 'Slide2', '', '', 'uploads/slider_image/slide2.jpg', 1, '2018-03-06 22:29:33', 0, '0000-00-00 00:00:00', 1),
-(3, 'Slide3', '', '', 'uploads/slider_image/18167230_l2.jpg', 1, '2018-03-07 16:10:29', 0, '0000-00-00 00:00:00', 1);
+(1, 'Slide1', '', '', 'uploads/slider_image/du2.PNG', 1, '2018-03-06 22:27:57', 2, '2019-05-29 01:03:38', 1),
+(2, 'Slide2', '', '', 'uploads/slider_image/du3.PNG', 1, '2018-03-06 22:29:33', 2, '2019-05-29 01:05:06', 1),
+(3, 'Slide3', '', '', 'uploads/slider_image/du.jpg', 1, '2018-03-07 16:10:29', 2, '2019-05-29 01:01:34', 1);
 
 -- --------------------------------------------------------
 
@@ -245,7 +302,8 @@ CREATE TABLE `du_users` (
 --
 
 INSERT INTO `du_users` (`id`, `name`, `email_id`, `phone`, `user_name`, `password`, `user_group`, `status`) VALUES
-(1, 'MAHBUB', 'mahbub@gmail.com', '202cb962ac59075b964b07152d234b70', 'mahbub', 'caf1a3dfb505ffed0d024130f58c5cfa', 1, 1);
+(1, 'MAHBUB', 'mahbub@gmail.com', '202cb962ac59075b964b07152d234b70', 'mahbub', 'caf1a3dfb505ffed0d024130f58c5cfa', 1, 1),
+(2, 'nizam uddin', 'nizam.fci@gmail.com', '', '', 'e10adc3949ba59abbe56e057f20f883e', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -306,6 +364,20 @@ ALTER TABLE `du_menu`
   ADD PRIMARY KEY (`menu_id`);
 
 --
+-- Indexes for table `du_news`
+--
+ALTER TABLE `du_news`
+  ADD PRIMARY KEY (`news_id`),
+  ADD KEY `entry_by` (`entry_by`);
+
+--
+-- Indexes for table `du_notice`
+--
+ALTER TABLE `du_notice`
+  ADD PRIMARY KEY (`notice_id`),
+  ADD KEY `entry_by` (`entry_by`);
+
+--
 -- Indexes for table `du_role_privilege`
 --
 ALTER TABLE `du_role_privilege`
@@ -356,13 +428,25 @@ ALTER TABLE `du_faculty_member`
 -- AUTO_INCREMENT for table `du_menu`
 --
 ALTER TABLE `du_menu`
-  MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
+--
+-- AUTO_INCREMENT for table `du_news`
+--
+ALTER TABLE `du_news`
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `du_notice`
+--
+ALTER TABLE `du_notice`
+  MODIFY `notice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `du_role_privilege`
 --
 ALTER TABLE `du_role_privilege`
-  MODIFY `privilege_id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=343;
+  MODIFY `privilege_id` bigint(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=365;
 
 --
 -- AUTO_INCREMENT for table `du_slider`
@@ -374,13 +458,29 @@ ALTER TABLE `du_slider`
 -- AUTO_INCREMENT for table `du_users`
 --
 ALTER TABLE `du_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `du_user_group`
 --
 ALTER TABLE `du_user_group`
   MODIFY `user_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `du_news`
+--
+ALTER TABLE `du_news`
+  ADD CONSTRAINT `du_news_ibfk_1` FOREIGN KEY (`entry_by`) REFERENCES `du_users` (`id`);
+
+--
+-- Constraints for table `du_notice`
+--
+ALTER TABLE `du_notice`
+  ADD CONSTRAINT `du_notice_ibfk_1` FOREIGN KEY (`entry_by`) REFERENCES `du_users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
