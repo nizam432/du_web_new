@@ -26,7 +26,7 @@ class Frontend extends CI_Controller {
      */
     public function index() {
         $param = array();
-        //$param['product'] = $this->model_frontend->get_home_product_data();
+        $param['notice'] = $this->model_frontend->get_notice_list_data();
         $param['slider'] = $this->model_frontend->get_slider_data();
         //$param['content'] = $this->load->view('pages/home.php', $param, TRUE);
         $this->load->view('index.php', $param);

@@ -174,7 +174,7 @@
             </div>
             
            <!-- Faculty Area  -->
-              <?php $this->load->view('pages/news'); ?>
+              <?php  $this->load->view('pages/news'); ?>
 
             <!-- News Area  -->
               <?php $this->load->view('pages/news'); ?>

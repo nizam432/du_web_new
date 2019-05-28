@@ -10,6 +10,19 @@ class Model_frontend extends CI_Model
         parent::__construct();
     }
     
+    
+    	public function get_notice_list_data()
+	{
+		$this->db->select('notice_id,notice,attached_file,entry_date_time');
+		$this->db->from('notice');
+                $this->db->where('status',1);
+		$this->db->order_by("notice_id", "DESC");
+		$query=$this->db->get('');
+		$result=$query->result();
+		return $result;
+	}
+        
+    
     /**
      * Get Home product data
      * 
