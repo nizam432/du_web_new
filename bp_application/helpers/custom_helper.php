@@ -12,20 +12,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // ------------------------------------------------------------------------
  
  
-    function word_limit($text,$limit=70){
-        $explode = explode(' ',$text);
-        $string  = '';
+function word_limit($text,$limit=70){
+	$explode = explode(' ',$text);
+	$string  = '';
 
-        $dots = '...';
-        if(count($explode) <= $limit){
-            $dots = '';
-        }
-        for($i=0;$i<$limit;$i++){
-            $string .= $explode[$i]." ";
-        }
+	$dots = '...';
+	if(count($explode) <= $limit){
+		$dots = '';
+	}
+	for($i=0;$i<$limit;$i++){
+		$string .= $explode[$i]." ";
+	}
 
-        return $string.$dots;
-    }
+	return $string.$dots;
+}
 	
 if (!function_exists('privilege_check')) {
     /**
@@ -140,6 +140,8 @@ if (!function_exists('get_array')) {
             6436 => 'SHAHID SUHRAWARDY COLLEGE',
             6441 => 'BEGUM BADRUNNESSA GOVT. GIRLS COLLEGE',
         );
+		 $data['link_type'] = array(1 => 'USEFUL LINKS', 2 => 'QUICK LINKS', 3 => 'FOR STUDENTS', 4 => 'GET IN TOUCH');
+		
 
         if (array_key_exists($arr_name, $data)) {
             return $data[$arr_name];
