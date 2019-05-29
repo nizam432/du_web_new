@@ -4,7 +4,7 @@ class Model_backend_link extends  CI_Model
 {
 	public function get_link_list_data()
 	{
-		$this->db->select('link.link_id,link.link,link.status,link.entry_date_time as entry_date_time,users.name as entry_by');
+		$this->db->select('link.link_id,link.link_title,link.link_type,link.link_or_url,link.status,link.entry_date_time as entry_date_time,users.name as entry_by');
 		$this->db->from('link');
 		$this->db->join('users', 'users.id = link.entry_by');
 		$this->db->order_by("link.link_id", "DESC");

@@ -74,8 +74,8 @@ class Backend_link extends CI_Controller {
      */
     public function save() {
  //Form Validation
-        $this->form_validation->set_rules('link', 'Link', 'required', array('required' => "%s is required"));
-        $this->form_validation->set_rules('link', 'Link Type', 'required', array('required' => "%s is required"));
+        $this->form_validation->set_rules('link_or_url', 'Link', 'required', array('required' => "%s is required"));
+        $this->form_validation->set_rules('link_type', 'Link Type', 'required', array('required' => "%s is required"));
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('link_form_validation', validation_errors());
@@ -83,7 +83,7 @@ class Backend_link extends CI_Controller {
         } else {
             $data = array(
                 'link_title' => $this->input->post('link_title'),
-                'link' => $this->input->post('link'),
+                'link_or_url' => $this->input->post('link_or_url'),
                 'link_type' => $this->input->post('link_type'),
                 'entry_by' => $this->user_id,
                 'entry_date_time' => $this->date_time,
@@ -112,17 +112,17 @@ class Backend_link extends CI_Controller {
      * return Response 
      */
     public function update($id) {
-        $this->form_validation->set_rules('link', 'Link', 'required', array('required' => "%s is required"));
-        $this->form_validation->set_rules('link', 'Link Type', 'required', array('required' => "%s is required"));
+        $this->form_validation->set_rules('link_or_url', 'Link', 'required', array('required' => "%s is required"));
+        $this->form_validation->set_rules('link_type', 'Link Type', 'required', array('required' => "%s is required"));
 
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('link_form_validation', validation_errors());
-            redirect("backend_link/edit/$slider_id");
+            redirect("backend_link/edit/$id");
         } else {
             $data = array(
                 'link_title' => $this->input->post('link_title'),
-                'link' => $this->input->post('link'),
-		'link_type' => $this->input->post('link_type'),
+                'link_or_url' => $this->input->post('link_or_url'),
+				'link_type' => $this->input->post('link_type'),
                 'update_by' => $this->user_id,
                 'update_date_time' => $this->date_time,
                 'status' => $this->input->post('status')

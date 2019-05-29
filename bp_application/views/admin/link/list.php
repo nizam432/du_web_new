@@ -22,9 +22,10 @@
                 <thead>
                     <tr>
                         <th>#</th>
+                        <th>Title</th>
                         <th>Link</th>
+                        <th>Type</th>
                         <th>Isactive</th>
-                        <th>Attached File</th>
                         <th>Edit</th>
                     </tr>
                 </thead>
@@ -35,11 +36,12 @@
                     foreach ($link_list as $link_list_data) {
                         echo '<tr class="odd gradeX">
                             <td>' . $sl++ . '</td>
-                            <td>'.$link_list_data->link. '</td>
-                            <td>'.$link_type[$link_list_data->link]. '</td>
+                            <td>'.$link_list_data->link_title. '</td>
+                            <td>'.$link_list_data->link_or_url. '</td>
+                            <td>'.$link_type[$link_list_data->link_type]. '</td>
                             <td>' . (($link_list_data->status == 1) ?
                                 '<span class="label label-success">Active</span>' : '<span class="label label-warning">Inactive</span>') . '</td>	 
-                            <td> <a href="' . base_url() . 'backend_Link/edit/' . $link_list_data->Link_id . '"><span class="fa fa-edit"></span> Edit</a></td>					
+                            <td> <a href="' . base_url() . 'backend_Link/edit/' . $link_list_data->link_id . '"><span class="fa fa-edit"></span> Edit</a></td>					
                         </tr>';
                     }
                     ?>

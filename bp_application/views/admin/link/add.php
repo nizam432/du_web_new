@@ -21,24 +21,28 @@
                     </div>
                 <?php } ?>
                 <form id="hsc_add_form"  action="<?php echo base_url(); ?>backend_link/save" method="post" class="form-horizontal" enctype="multipart/form-data">
-                    <input type="hidden" name="id" value="" id="id">
+
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Link<span class="req"/></span></label>
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control" name="link">
-                        </div>	
+						<label class="col-sm-2 control-label">Title<span class="req"/></span></label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="link_title">
+						</div>	
+						<label class="col-sm-2 control-label">Link<span class="req"/></span></label>
+						<div class="col-sm-4">
+							<input type="text" class="form-control" name="link_or_url">
+						</div>					
+                    </div>                      
+                    <div class="form-group">
                         <label class="col-sm-2 control-label">Link Type</label>
                         <div class="col-sm-4">
 						<?php $link_type=get_array('link_type');?>
                             <select name="link_type" class="form-control">
-                                <option>Select</option>
+                                <option value="">Select</option>
 								<?php foreach($link_type as $key=>$value){?>
                                 <option value="<?php echo $key?>"><?php echo $value ?></option>
 								<?php } ?>
                             </select>
                         </div>						
-                    </div>                      
-                    <div class="form-group">			
                         <label class="col-sm-2 control-label">Isactive</label>
                         <div class="col-sm-4">
                             <select name="status" class="form-control">
