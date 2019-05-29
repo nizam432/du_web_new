@@ -9698,6 +9698,9 @@ ul.course-feature2 li:before {
 .usefull_link ul li a{
 	color:#000;
 }
+.usefull_link ul li a:hover{
+	color:#E1292A;
+}
 
 .home_about{
 	background:#fff;

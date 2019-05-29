@@ -94,41 +94,27 @@
 						<div class="usefull_link">
 							<h1><span class="fa fa-link"></span> Usefull Link</h1>
 							<ul>
+								<?php foreach($use_full_link as $link_data){?>
 								<li>
-									<a target="_blank" href="http://jobs.du.ac.bd/"><span class="fa fa-angle-double-right"></span> test1</a>
+									<a target="_blank" href="<?php echo $link_data->link_or_url?>">
+										<span class="fa fa-angle-double-right"></span> 
+										<?php echo $link_data->link_title;?> 
+									</a>
 								</li>
-								<li>
-									<a target="_blank" href="http://jobs.du.ac.bd/"><span class="fa fa-angle-double-right"></span> DU Institutional Repository</a>
-								</li>
-								<li>
-									<a target="_blank" href="http://jobs.du.ac.bd/"><span class="fa fa-angle-double-right"></span> DU Prokashana Sangstha</a>
-								</li>
-								<li>
-									<a target="_blank" href="http://jobs.du.ac.bd/"><span class="fa fa-angle-double-right"></span> test1</a>
-								</li>
-								<li>
-									<a target="_blank" href="http://jobs.du.ac.bd/"><span class="fa fa-angle-double-right"></span> test1</a>
-								</li>
+								<?php } ?>
 							</ul>
 						</div><br>
 						<div class="usefull_link">
-							<h1><span class="fa fa-link"></span>  Usefull Link</h1>
+							<h1><span class="fa fa-link"></span>  Quick Link</h1>
 							<ul>
+								<?php foreach($quick_link as $link_data){?>
 								<li>
-									<a target="_blank" href="http://jobs.du.ac.bd/"><span class="fa fa-angle-double-right"></span> test1</a>
+									<a target="_blank" href="<?php echo $link_data->link_or_url?>">
+										<span class="fa fa-angle-double-right"></span> 
+										<?php echo $link_data->link_title;?> 
+									</a>
 								</li>
-								<li>
-									<a target="_blank" href="http://jobs.du.ac.bd/"><span class="fa fa-angle-double-right"></span> DU Institutional Repository</a>
-								</li>
-								<li>
-									<a target="_blank" href="http://jobs.du.ac.bd/"><span class="fa fa-angle-double-right"></span> DU Prokashana Sangstha</a>
-								</li>
-								<li>
-									<a target="_blank" href="http://jobs.du.ac.bd/"><span class="fa fa-angle-double-right"></span> test1</a>
-								</li>
-								<li>
-									<a target="_blank" href="http://jobs.du.ac.bd/"><span class="fa fa-angle-double-right"></span> test1</a>
-								</li>
+								<?php } ?>
 							</ul>
 						</div>
 					</div>					

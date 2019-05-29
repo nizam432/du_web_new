@@ -54,6 +54,7 @@ class Model_frontend extends CI_Model {
         $this->db->select("*");
         $this->db->from('du_link');
         $this->db->where('link_type',$type);
+		$this->db->where('status', 1);
         $query = $this->db->get();
         $result = $query->result();
         return $result;        
