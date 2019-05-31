@@ -632,12 +632,21 @@ ul {
   .sub-title-full-width {
     margin-bottom: 70px;
   }
+  
+}
+
+@media (min-width: 991px){
+  .slider_img_size{
+	  height:500px!important;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .sub-title-full-width {
     margin-bottom: 60px;
   }
+  
 }
+
 @media (min-width: 480px) and (max-width: 767px) {
   .sub-title-full-width {
     margin-bottom: 50px;
@@ -1877,7 +1886,9 @@ nav#desktop-nav ul li a {
   nav#desktop-nav ul li a {
     padding: 30px 12px;
   }
+  
 }
+
 @media (min-width: 768px) and (max-width: 991px) {
   nav#desktop-nav ul li a {
     padding: 30px 6px;
@@ -9710,4 +9721,25 @@ ul.course-feature2 li:before {
 
 .home_about img{
 	margin-bottom:5px;
+}
+
+.other_page{
+	min-height:400px;
+	padding:20px 0px;
+}
+
+.notice_details a{
+	color:#DF5654;
+}
+
+.notice_details .notice{
+	padding-bottom:5px;
+}
+
+.news_details h1{
+	font-size:20px;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	margin:10px 0px;
 }

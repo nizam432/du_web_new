@@ -34,9 +34,9 @@
 						<img class="img-responsive" src="<?php echo base_url().$news_data->news_image ?>" alt="">                                
 						</div>
 						<div class="courses-content-wrapper">
-			  <h3 class="item-title" style="font-size:16px;"><a href="<?php echo base_url()?>news_details/<?php echo $news_data->news_id ?>"><?php echo $news_data->title ?></a></h3>
+			  <h3 class="item-title" style="font-size:16px;"><a href="<?php echo base_url()?>frontend/news_details/<?php echo $news_data->news_id ?>"><?php echo $news_data->title ?></a></h3>
 							<p class="item-content"><span style = "font-weight: normal;"><?php echo word_limit($news_data->details, 20)  ?></span></p>
-						   <p class="item-content"><a href="<?php echo base_url() ?>news_details/<?php echo $news_data->news_id ?>">>>> Read More</a></p>
+						   <p class="item-content"><a href="<?php echo base_url() ?>frontend/news_details/<?php echo $news_data->news_id ?>">>>> Read More</a></p>
 						</div>                            
 					</div>                            
 				</div>

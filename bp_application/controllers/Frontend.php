@@ -31,93 +31,44 @@ class Frontend extends CI_Controller {
         $param['news'] = $this->model_frontend->get_news_data();
         $param['use_full_link'] = $this->model_frontend->get_link_data(1);
         $param['quick_link'] = $this->model_frontend->get_link_data(2);
-        //$param['content'] = $this->load->view('pages/home.php', $param, TRUE);
+        $param['content'] = $this->load->view('pages/home/home.php', $param, TRUE);
         $this->load->view('index.php', $param);
     }
 
     /**
-     * Get product details data
+     * Get notice details data
      * 
      * @param int $product_id
      * @return Response 
      */
-    public function details($product_id) {
+    public function notice_details($id) {
         $param = array();
-        $param['product'] = $this->model_frontend->get_product_details_data($product_id);
-        $param['other_image'] = $this->model_frontend->get_product_optional_image($product_id);
-        $param['content'] = $this->load->view('pages/details.php', $param, TRUE);
+        $param['notice'] = $this->model_frontend->get_notice_details_data($id);
+        $param['content'] = $this->load->view('pages/notice_details.php', $param, TRUE);
         $this->load->view('index.php', $param);
     }
 
     /**
-     * Get category wise product data 
-     * 
-     * @param int $category_id
-     * @return Response
-     */
-    public function category($category_id) {
-        $param = array();
-        $param['product'] = $this->model_frontend->get_category_wise_product_data($category_id);
-        $param['content'] = $this->load->view('pages/category.php', $param, TRUE);
-        $this->load->view('index.php', $param);
-    }
-
-    /**
-     * Get category wise product data 
-     * 
-     * @param int $category_id
-     * @return Response
-     */
-    public function sub_category($category_id) {
-        $param = array();
-        $param['product'] = $this->model_frontend->get_sub_category_wise_product_data($category_id);
-        $param['content'] = $this->load->view('pages/sub_category.php', $param, TRUE);
-        $this->load->view('index.php', $param);
-    }
-
-    /**
-     * Get shopping cart information
-     */
-    public function shopping() {
-        $param = array();
-        $param['content'] = $this->load->view('pages/shopping_cart.php', $param, TRUE);
-        $this->load->view('index.php', $param);
-    }
-
-    /**
-     * Get contact us information
+     * Get about us information
      *
      * @return Response
      */
-    public function contact_us() {
+    public function about_us() {
         $param = array();
-        $param['content'] = $this->load->view('pages/contact_us', $param, TRUE);
+        $param['content'] = $this->load->view('pages/about_us', $param, TRUE);
         $this->load->view('index', $param);
     }
-
     /**
-     * Get login information
+     * Get news details
      *
      * @return Response
      */
-    public function customer_login() {
+    public function news_details($id) {
         $param = array();
-        $param['content'] = $this->load->view('pages/contact_us', $param, TRUE);
+		$param['news'] = $this->model_frontend->get_news_details_data($id);
+        $param['content'] = $this->load->view('pages/news_details', $param, TRUE);
         $this->load->view('index', $param);
     }
 
-    /**
-     * Search product
-     * @param string $product_name
-     * 
-     * @return Response 
-     */
-    public function search() {
-        $product_name = db_escape($this->input->post('product_name'));
-        $param = array();
-        $param['product'] = $this->model_frontend->get_search_product_data($product_name);
-        $param['content'] = $this->load->view('pages/show_search_product', $param, TRUE);
-        $this->load->view('index', $param);
-    }
 
 }

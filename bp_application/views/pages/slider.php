@@ -19,7 +19,7 @@
                     <button type="button" class="btn btn-default get">Get it now</button>
                 </div>-->
                 <div class="col-sm-12">
-                    <img style="height: 500px; width: 100%;" src="<?php echo base_url().$slider_data->slider_image; ?>" class=" girl img-responsive" alt="" />
+                    <img class="slider_img_size" style="width: 100%;" src="<?php echo base_url().$slider_data->slider_image; ?>" class=" girl img-responsive" alt="" />
                     <!--<img src="<?php echo base_url(); ?>assets/frontend/images/home/pricing.png"  class="pricing" alt="" />-->
                 </div>
             </div>

@@ -28,6 +28,7 @@ class Model_backend_notice extends  CI_Model
 		$result=$query->row();
 		return $result;
 	}
+
 	
 	public function update_notice_data($data, $id)
 	{

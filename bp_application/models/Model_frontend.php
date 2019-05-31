@@ -59,4 +59,31 @@ class Model_frontend extends CI_Model {
         $result = $query->result();
         return $result;        
     }
+	
+	public function get_notice_details_data($id)
+	{
+		$this->db->select('*');
+		$this->db->from('notice');
+		$this->db->where('notice_id',$id);
+		$query=$this->db->get();
+		$result=$query->row();
+		return $result;
+	}
+	
+	
+    /**
+     * Get news data
+     * 
+     * @return array $result
+     */
+	public function get_news_details_data($id)
+	{
+		$this->db->select('*');
+		$this->db->from('news');
+		$this->db->where('news_id',$id);
+		//$this->db->where('status', 1);
+		$query=$this->db->get();
+		$result=$query->row();
+		return $result;
+	}
 }
