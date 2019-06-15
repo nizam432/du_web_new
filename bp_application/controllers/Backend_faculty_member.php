@@ -1,30 +1,34 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-/**
- * Backend faculty_member controller 
- */
-class Backend_faculty_member extends CI_Controller 
-{ 
-	public function __construct()
-	{
-		parent::__construct();
-		$check_admin_id = $this->session->userdata('admin_id');
-		if ($check_admin_id == NULL) {
-		  redirect('backend_login/check_login', "refresh");
-		}
-		if($this->session->userdata('admin_user_type')!='1')
-		{
-			exit;
-		}
 
-	  //load model
-	  $this->load->model('model_backend_faculty_member');
-	  //load form validation
-	  $this->load->library('form_validation');
-	  //load session
-	  $this->load->library('session');
-	   date_default_timezone_set('Asia/Dhaka');	
-	}
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+/**
+ * Backend  controller 
+ */
+class Backend_faculty_member extends CI_Controller {
+
+    protected $user_data = array();
+    protected $user_id = null;
+    protected $user_group = null;
+    protected $privilege = array();
+    protected $date_time = null;
+
+    public function __construct() {
+        parent::__construct();
+        date_default_timezone_set('Asia/Dhaka');
+        $this->user_data = $this->session->userdata('login_session_data');
+
+        $this->user_id = $this->user_data['user_id'];
+        $this->privilege = $this->user_data['privilege'];
+        $this->user_group = $this->user_group['user_group'];
+        $this->date_time = date('Y-m-d H:i:s');
+
+        if ($this->user_id == NULL) {
+            redirect('backend_login/check_login', "refresh");
+        }
+        //load model
+        $this->load->model('model_backend_faculty_member');
+    }
  	/**
 	 * Show faculty_member List
 	 *
@@ -98,7 +102,7 @@ class Backend_faculty_member extends CI_Controller
 		$result=$this->do_upload('faculty_member_photo');
 		if(!empty($result[0]))
 		{
-			echo $data['faculty_member_photo'] = "uplaod_file/faculty_member_photo/$result[0]" ;	
+			echo $data['faculty_member_photo'] = "uploads/faculty_member_photo/$result[0]" ;	
 		}		
 		$data['entry_by']=$this->session->userdata('admin_id');
 		$data['entry_date_time']=date('Y-m-d H:i:s');
@@ -165,7 +169,7 @@ class Backend_faculty_member extends CI_Controller
 		$result=$this->do_upload('faculty_member_photo');
 		if(!empty($result[0]))
 		{
-			echo $data['faculty_member_photo'] = "uplaod_file/faculty_member_photo/$result[0]" ;	
+			echo $data['faculty_member_photo'] = "uploads/faculty_member_photo/$result[0]" ;	
 		}				
 		$data['update_by']=$this->session->userdata('admin_id');
 		$data['update_date_time']=date('Y-m-d H:i:s');
@@ -235,7 +239,7 @@ class Backend_faculty_member extends CI_Controller
 	{
 	    // photo upload
 		$config = array();
-		$config['upload_path'] = './uplaod_file/faculty_member_photo/';
+		$config['upload_path'] = './uploads/faculty_member_photo/';
 		$config['allowed_types'] = 'gif|jpg|png|';
 		$config['max_size'] = '200';	
 		

@@ -9743,3 +9743,39 @@ ul.course-feature2 li:before {
 	padding:0;
 	margin:10px 0px;
 }
+
+.faculty_details h1{
+	font-size:15px;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	margin:3px 0px;
+}
+
+.faculty_details h2{
+	font-size:13px;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	margin:10px 0px;
+}
+
+.faculty_details img{
+	width:150px;
+	height:150px;
+	margin-bottom:10px;
+}
+
+.department_details h1{
+	font-size:15px;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	margin:3px 0px;
+}
+
+.department_details h2{
+	font-size:14px;
+	margin:0;
+	padding:0;
+}

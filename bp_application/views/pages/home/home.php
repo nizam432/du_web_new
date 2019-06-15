@@ -36,6 +36,19 @@
 					</li>
 					<?php } ?>
 				</ul>
+			</div><br>			
+			<div class="usefull_link">
+				<h1><span class="fa fa-link"></span>  Quick Link</h1>
+				<ul>
+					<?php foreach($quick_link as $link_data){?>
+					<li>
+						<a target="_blank" href="<?php echo $link_data->link_or_url?>">
+							<span class="fa fa-angle-double-right"></span> 
+							<?php echo $link_data->link_title;?> 
+						</a>
+					</li>
+					<?php } ?>
+				</ul>
 			</div>
 		</div>					
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -73,7 +86,9 @@
 		
 		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 			<?php $this->load->view('pages/home/notice'); ?>
-		</div>
+		</div>		
+		
+
 							  
 		</div>
 	</div>

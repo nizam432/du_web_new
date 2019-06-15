@@ -70,6 +70,44 @@ class Model_frontend extends CI_Model {
 		return $result;
 	}
 	
+	public function get_faculty_data(){
+        $this->db->select("*");
+        $this->db->from('faculty');
+		$this->db->where('status', 1);
+        $query = $this->db->get();
+        $result = $query->result();
+        return $result;		
+	}		
+	
+	public function get_department_data($id){
+        $this->db->select("*");
+        $this->db->from('department');
+		$this->db->where('faculty', $id);
+		$this->db->where('status', 1);
+        $query = $this->db->get();
+        $result = $query->result();
+        return $result;		
+	}	
+	
+	public function get_faculty_details($id){
+        $this->db->select("*");
+        $this->db->from('faculty');
+		$this->db->where('faculty_id',$id);
+		$this->db->where('status', 1);
+        $query = $this->db->get();
+        $result = $query->row();
+        return $result;		
+	}	
+	
+	public function get_department_details($id){
+        $this->db->select("*");
+        $this->db->from('department');
+		$this->db->where('department_id',$id);
+		$this->db->where('status', 1);
+        $query = $this->db->get();
+        $result = $query->row();
+        return $result;		
+	}
 	
     /**
      * Get news data

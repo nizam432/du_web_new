@@ -30,6 +30,7 @@
 		<tr>
 		  <th><input type="checkbox"  id="selecctall" /></th> 	
 		  <th>#</th>
+		  <th>Photo</th>
 		  <th>Faculty Member Name</th>
 		  <th>Entry By</th>
 		  <th>Entry Date & Time</th>
@@ -45,6 +46,7 @@
 					echo '<tr class="odd gradeX">
 					<td><input type="checkbox" name="checkbox[]" value="' . $faculty_member_list_data->faculty_member_id . '" id="checkbox[]" class="checkbox1"></td>
 					<td>' . $sl++. '</td>
+					<td><img width="80" src="'.base_url().$faculty_member_list_data->faculty_member_photo.'"></td>
 					<td>'.$faculty_member_list_data->faculty_member_name . '</td>
 					<td>' . $faculty_member_list_data->entry_by . '</td>
 					<td>' . $faculty_member_list_data->entry_date_time . '</td>

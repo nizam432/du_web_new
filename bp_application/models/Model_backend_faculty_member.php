@@ -6,7 +6,7 @@ class Model_backend_faculty_member extends  CI_Model
 	public function get_faculty_member_list_data()
 	{
 
-		$this->db->select('faculty_member.faculty_member_id as faculty_member_id,faculty_member.faculty_member_name as faculty_member_name,faculty_member.status as status,faculty_member.entry_date_time as entry_date_time,users.name as entry_by');
+		$this->db->select('faculty_member.faculty_member_photo,faculty_member.faculty_member_id as faculty_member_id,faculty_member.faculty_member_name as faculty_member_name,faculty_member.status as status,faculty_member.entry_date_time as entry_date_time,users.name as entry_by');
 		$this->db->from('faculty_member');
 		$this->db->join('users', 'users.id = faculty_member.entry_by');
 		$this->db->order_by("faculty_member.faculty_member_id", "DESC");

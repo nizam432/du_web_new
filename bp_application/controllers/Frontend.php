@@ -47,6 +47,36 @@ class Frontend extends CI_Controller {
         $param['content'] = $this->load->view('pages/notice_details.php', $param, TRUE);
         $this->load->view('index.php', $param);
     }
+	
+	/**
+     * Get faculty details data
+     * 
+     * @param int $product_id
+     * @return Response 
+     */
+    public function faculty_details($id) {
+        $param = array();
+        $param['faculty_details'] = $this->model_frontend->get_faculty_details($id);
+        $param['department'] = $this->model_frontend->get_department_data($id);
+        $param['content'] = $this->load->view('pages/faculty_details.php', $param, TRUE);
+        $this->load->view('index.php', $param);
+    }	
+	
+	/**
+     * Get Departmet details data
+     * 
+     * @param int $product_id
+     * @return Response 
+     */
+    public function department_details($id) {
+        $param = array();
+        $param['department_details'] = $this->model_frontend->get_department_details($id);
+		$faculty_id=$param['department_details']->faculty;
+		$param['faculty_details'] = $this->model_frontend->get_faculty_details($faculty_id);
+        $param['department'] = $this->model_frontend->get_department_data($faculty_id);
+        $param['content'] = $this->load->view('pages/department_details.php', $param, TRUE);
+        $this->load->view('index.php', $param);
+    }
 
     /**
      * Get about us information
@@ -57,7 +87,19 @@ class Frontend extends CI_Controller {
         $param = array();
         $param['content'] = $this->load->view('pages/about_us', $param, TRUE);
         $this->load->view('index', $param);
+    }    
+	
+	/**
+     * Get contact us information
+     *
+     * @return Response
+     */
+    public function contact_us() {
+        $param = array();
+        $param['content'] = $this->load->view('pages/contact_us', $param, TRUE);
+        $this->load->view('index', $param);
     }
+	
     /**
      * Get news details
      *

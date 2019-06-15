@@ -1,29 +1,35 @@
 <?php
+
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 /**
- * Backend faculty controller 
+ * Backend  controller 
  */
-class Backend_faculty extends CI_Controller 
-{ 
-	public function __construct()
-	{
-		parent::__construct();
-		$check_admin_id = $this->session->userdata('admin_id');
-		if ($check_admin_id == NULL) {
-		  redirect('backend_login/check_login', "refresh");
-		}
-		if($this->session->userdata('admin_user_type')!='1')
-		{
-			exit;
-		}
-	  //load model
-	  $this->load->model('model_backend_faculty');
-	  //load form validation
-	  $this->load->library('form_validation');
-	  //load session
-	  $this->load->library('session');
-	   date_default_timezone_set('Asia/Dhaka');
-	}
+class Backend_faculty extends CI_Controller {
+
+    protected $user_data = array();
+    protected $user_id = null;
+    protected $user_group = null;
+    protected $privilege = array();
+    protected $date_time = null;
+
+    public function __construct() {
+        parent::__construct();
+        date_default_timezone_set('Asia/Dhaka');
+        $this->user_data = $this->session->userdata('login_session_data');
+
+        $this->user_id = $this->user_data['user_id'];
+        $this->privilege = $this->user_data['privilege'];
+        $this->user_group = $this->user_group['user_group'];
+        $this->date_time = date('Y-m-d H:i:s');
+
+        if ($this->user_id == NULL) {
+            redirect('backend_login/check_login', "refresh");
+        }
+        //load model
+        $this->load->model('model_backend_faculty');
+    }    
+    
  	/**
 	 * Show faculty List
 	 *
@@ -73,7 +79,16 @@ class Backend_faculty extends CI_Controller
 	{
 		$data=array();
 		$data['faculty_title']=$this->input->post('faculty_title', TRUE);
-		$data['entry_by']=$this->session->userdata('admin_id');
+		$data['head_of_office']=$this->input->post('head_of_office', TRUE);
+		$data['designation']=$this->input->post('designation', TRUE);
+		$result=$this->do_upload('faculty_head_picture');
+		if(!empty($result[0]))
+		{
+			echo $data['faculty_head_picture'] = "uploads/faculty_head_picture/$result[0]" ;	
+		}
+		//$data['faculty_head_picture']=$this->input->post('faculty_head_picture', TRUE);
+		$data['description']=$this->input->post('description', TRUE);
+		$data['entry_by']=$this->user_id;
 		$data['entry_date_time']=date('Y-m-d H:i:s');
 		$data['status']=$this->input->post('status', TRUE);
 		
@@ -110,7 +125,18 @@ class Backend_faculty extends CI_Controller
 	{
 		$data = array();
 		$data['faculty_title']=$this->input->post('faculty_title', TRUE);
-		$data['update_by']=$this->session->userdata('admin_id');
+		$data['head_of_office']=$this->input->post('head_of_office', TRUE);
+		$data['designation']=$this->input->post('designation', TRUE);
+
+		$result=$this->do_upload('faculty_head_picture');
+		if(!empty($result[0]))
+		{
+			echo $data['faculty_head_picture'] = "uploads/faculty_head_picture/$result[0]" ;	
+		}			
+		
+		//$data['faculty_head_picture']=$this->input->post('faculty_head_picture', TRUE);
+		$data['description']=$this->input->post('description', TRUE);		
+		$data['update_by']=$this->user_id;
 		$data['update_date_time']=date('Y-m-d H:i:s');
 		$data['status']=$this->input->post('status', TRUE);
 		
@@ -158,5 +184,38 @@ class Backend_faculty extends CI_Controller
 		$data['status']=0;
 		$ids = ( explode( ',', $this->input->get_post('ids') ));
 		$this->model_backend_faculty->unpublish_data($data,$ids);
+	}
+	
+		
+	public function do_upload($faculty_head_picture)
+	{
+	    // photo upload
+		$config = array();
+		$config['upload_path'] = './uploads/faculty_head_picture/';
+		$config['allowed_types'] = 'gif|jpg|png|';
+		$config['max_size'] = '10000';	
+		
+		$this->load->library('upload', $config,'faculty_head_picture');
+		$this->faculty_head_picture->initialize($config);
+		$faculty_head_picture = $this->faculty_head_picture->do_upload('faculty_head_picture');
+	
+	    // Check uploads success
+		if ($faculty_head_picture) 
+		{
+			$file_name=array();
+		   if($faculty_head_picture)
+		  { // Both Upload Success
+			
+		  // Data of your cover file
+		  $faculty_head_picture = $this->faculty_head_picture->data();
+		  $file_name[0]=$faculty_head_picture['file_name']; 
+		  }
+		  
+		  return $file_name;
+		} 
+		else {
+		 echo 'Cover upload Error : ' . $this->faculty_head_picture->display_errors() . '<br/>';
+		//exit;
+		}
 	}
 }

@@ -1,66 +1,60 @@
-<div id="contact-page" class="container">
-	<div class="bg">
-		<div class="row">    		
-			<div class="col-sm-12">    			   			
-				<h2 class="title text-center">Contact <strong>Us</strong></h2>    			    				    				
-				<div id="gmap" class="contact-map">
-				</div>
-			</div>			 		
-		</div>    	
-		<div class="row">  	
-			<div class="col-sm-8">
-				<div class="contact-form">
-					<h2 class="title text-center">Get In Touch</h2>
-					<div class="status alert alert-success" style="display: none"></div>
-					<form id="main-contact-form" class="contact-form row" name="contact-form" method="post">
-						<div class="form-group col-md-6">
-							<input type="text" name="name" class="form-control" required="required" placeholder="Name">
-						</div>
-						<div class="form-group col-md-6">
-							<input type="email" name="email" class="form-control" required="required" placeholder="Email">
-						</div>
-						<div class="form-group col-md-12">
-							<input type="text" name="subject" class="form-control" required="required" placeholder="Subject">
-						</div>
-						<div class="form-group col-md-12">
-							<textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your Message Here"></textarea>
-						</div>                        
-						<div class="form-group col-md-12">
-							<input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
-						</div>
-					</form>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="contact-info">
-					<h2 class="title text-center">Contact Info</h2>
-					<address>
-						<p>BD LAPTOP BAZAR.</p>
-						<p>166 ANMOL HATIRPOOL </p>
-						<p>DHAKA BANGLADESH</p>
-						<p>Mobile: +8801758113213</p>
-						
-						
-					</address>
-					<div class="social-networks">
-						<h2 class="title text-center">Social Networking</h2>
-						<ul>
-							<li>
-								<a href="#"><i class="fa fa-facebook"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-google-plus"></i></a>
-							</li>
-							<li>
-								<a href="#"><i class="fa fa-youtube"></i></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>    			
-		</div>  
-	</div>	
-</div><!--/#contact-page-->
+
+<!-- Content Section -->
+
+<section id="contact-info">
+    <div style="text-align:center">                
+        <h2>Contact Us</h2>
+    </div>
+    <div class="gmap-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 text-center">
+                    <div class="gmap">
+                        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.4437799009875!2d90.3924947!3d23.7315492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8e90a449e4f%3A0xb7092a9c25197fa4!2sUniversity+of+Dhaka!5e0!3m2!1sen!2ssg!4v1442138882494" ></iframe>
+                    </div>
+                </div>
+
+                <div class="col-sm-7 map-content">
+                    <ul class="row">
+                        <li class="col-sm-6">
+                            <address>
+                                <h5>Office of the Vice Chancellor</h5>
+                                <p>Administrative Building (1st Floor)<br>
+                                    University of Dhaka</p>
+                                <p>Phone:<br>
+                                    Email: <a href="vcoffice@du.ac.bd">vcoffice@du.ac.bd</a></p>
+                            </address>
+                            <address>
+                                <h5>Office of the Pro Vice Chancellor(Academic)</h5>
+                                  <p>Administrative Building (1st Floor)<br>
+                                    University of Dhaka</p>
+                                <p>Phone:+88-9675192 / 4007  <br>
+                                    Email: <a href="provc.acad@du.ac.bd">provc.acad@du.ac.bd</a></p>
+                           </address>
+
+                        </li>
+
+
+                        <li class="col-sm-6">
+
+
+                            <address>
+                              <h5>Office of the Pro Vice Chancellor(Administration)</h5>
+                                  <p>Administrative Building (1st Floor)<br>
+                                    University of Dhaka</p>
+                                <p>Phone:+88-8615147 / 4010, 4011 <br>
+                                    Email: <a href="provc@du.ac.bd">provc@du.ac.bd</a></p>                         </address>
+                            <address>
+                                <h5>Office of the Registrar</h5>
+                                  <p>Administrative Building (2nd Floor)<br>
+                                    University of Dhaka</p>
+                                <p>Phone:+88-9670531 / 4020 <br>
+                                    Email: <a href="registrar@du.ac.bd">registrar@du.ac.bd</a></p>  
+                            </address>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  <!--/gmap_area -->
