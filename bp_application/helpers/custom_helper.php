@@ -140,7 +140,15 @@ if (!function_exists('get_array')) {
             6436 => 'SHAHID SUHRAWARDY COLLEGE',
             6441 => 'BEGUM BADRUNNESSA GOVT. GIRLS COLLEGE',
         );
-		 $data['link_type'] = array(1 => 'USEFUL LINKS', 2 => 'QUICK LINKS', 3 => 'FOR STUDENTS', 4 => 'GET IN TOUCH');
+		$data['link_type'] = array(1 => 'USEFUL LINKS', 2 => 'QUICK LINKS', 3 => 'FOR STUDENTS', 4 => 'GET IN TOUCH');
+		$data['administrator_type'] = array(
+		 1 => 'Chancellor', 
+		 2 => 'Vice Chancellor', 
+		 3 => 'Pro Vice Chancellor',
+		 5 => 'Members of the Syndicate', 
+		 6 => 'Members of the Senate',
+		 7=> 'Vice Chancellors LIST'
+		 );
 		
 
         if (array_key_exists($arr_name, $data)) {
